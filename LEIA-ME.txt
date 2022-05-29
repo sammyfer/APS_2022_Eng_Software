@@ -1,0 +1,10 @@
+Para testar o programa, utilize os usuários abaixo:
+
+Usuário: Admin
+Senha Admin
+
+Usuário: Financeiro
+Senha: Financeiro
+
+Usuário: Operacional
+Senha: Operacional
