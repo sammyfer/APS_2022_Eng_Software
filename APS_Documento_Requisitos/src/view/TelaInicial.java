@@ -9,6 +9,11 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -21,6 +26,11 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+        try {  
+            setIconImage(ImageIO.read(getClass().getResource("/resource/icon.jpg")));
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
         setLocationRelativeTo(null);
     }
 
@@ -33,6 +43,7 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
@@ -42,14 +53,21 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SISTEMA DE CONTROLE FINANCEIRO");
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Usuário:");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("Senha:");
 
-        btnLogin.setText("Login");
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/login.jpg"))); // NOI18N
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -64,55 +82,67 @@ public class TelaInicial extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/logo.jpg"))); // NOI18N
         jLabel10.setText("JOVEM AMBIENTALISTA");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtPassword)
+                                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnLogin)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtPassword))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(jLabel10)
-                .addContainerGap(72, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel10)
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -120,40 +150,23 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         try {
-                    String user = txtUser.getText();
-                    
-                    if (!user.isEmpty()) {
-                        String senha = txtPassword.getText();
-                        System.out.println(senha);
-                        boolean authorize = verificaSenha(user, senha);
-                        System.out.println(authorize);
-                        String nivel = verificaNivelAcesso(user);
-                        System.out.println(authorize);
-                        setVisible(false);
-                        if (authorize) {                                                       
-                            switch (nivel) {
-                            case "Administrador_Sistema":
-                                escolhaTela(1, user);
-                                System.out.println("Nivel 1");
-                                break;
-                            case "Controle_Financeiro":
-                                escolhaTela(2, user);
-                                System.out.println("Nivel 2");
-                                break;
-                            case "Controle_Operacional":
-                                escolhaTela(3, user);
-                                System.out.println("Nivel 3");
-                                break;
-                            default:
-                                break;
-                            }
-                        }
-                        else    JOptionPane.showMessageDialog(null, "Acesso negado. Impressao digital nao reconhecida!");
-                    } else
-                            JOptionPane.showMessageDialog(null, "O usuario nao existe. Clique no botao Sign Up para cadastrar um novo usuario.");
-                } catch (SQLException e1) {
-                        e1.printStackTrace();
+            String user = txtUser.getText();
+            if (!user.isEmpty()) {
+                String senha = txtPassword.getText();
+                boolean authorize = verificaSenha(user, senha);
+                String nivel = verificaNivelAcesso(user);
+                if (authorize) {     
+                    escolhaTela(user, nivel);
                 }
+                else    JOptionPane.showMessageDialog(null, "Acesso negado. Entre em contato com o administrador!");
+            } else
+                    JOptionPane.showMessageDialog(null, "O usuario nao existe. Clique no botao Sign Up para cadastrar um novo usuario.");
+            
+            txtUser.setText("");
+            txtPassword.setText("");
+        } catch (SQLException e1) {
+                e1.printStackTrace();
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -235,16 +248,17 @@ public class TelaInicial extends javax.swing.JFrame {
         }
         return false;
     }
-    private void escolhaTela(int x, String user) throws SQLException {
+    
+    protected boolean escolhaTela(String user, String nivel) throws SQLException {
         JList<String> list = new JList<>();
-        switch(x){
-            case 1:
+        switch(nivel){
+            case "Administrador_Sistema":
                 list = new JList<>(new String[] {"Usuários", "Serviços", "Produtos", "Estoque", "Financeiro"});
                 break;
-            case 2:
+            case "Controle_Financeiro":
                 list = new JList<>(new String[] {"Financeiro"});                
                 break;
-            case 3:
+            case "Controle_Operacional":
                 list = new JList<>(new String[] {"Serviços", "Produtos", "Estoque"});
                 break;
         }
@@ -252,31 +266,41 @@ public class TelaInicial extends javax.swing.JFrame {
         null, list, "Telas Disponiveis: ", JOptionPane.PLAIN_MESSAGE);
         System.out.println(Arrays.toString(list.getSelectedIndices()));
         String telaEscolhida = list.getSelectedValue();
-        switch (telaEscolhida){
-            case "Estoque":
-            	TelaEstoque telaEst = new TelaEstoque();
-                telaEst.setVisible(true);
-                this.setVisible(false);
-                break;
-            case "Usuários":
-            	TelaUsuario telaUsu = new TelaUsuario();
-                telaUsu.setVisible(true);
-                this.setVisible(false);
-                break;
-            case "Serviços":
-            	TelaServicos telaServ = new TelaServicos();
-                telaServ.setVisible(true);
-                this.setVisible(false);
-                break;
-            case "Produtos":
-                TelaProdutos telaProd = new TelaProdutos();
-                telaProd.setVisible(true);
-                this.setVisible(false);
-                break;
-            case "Financeiro":
-                TelaFinanceiro telaFin = new TelaFinanceiro();
-                telaFin.setVisible(true);
-                break;
+        try{
+            switch (telaEscolhida){
+                case "Estoque":
+                    TelaEstoque telaEst = new TelaEstoque();
+                    telaEst.setUserInfo(user, nivel);
+                    telaEst.setVisible(true);
+                    this.setVisible(false);
+                    break;
+                case "Usuários":
+                    TelaUsuario telaUsu = new TelaUsuario();
+                    telaUsu.setUserInfo(user, nivel);
+                    telaUsu.setVisible(true);
+                    this.setVisible(false);
+                    break;
+                case "Serviços":
+                    TelaServicos telaServ = new TelaServicos();
+                    telaServ.setUserInfo(user, nivel);
+                    telaServ.setVisible(true);
+                    this.setVisible(false);
+                    break;
+                case "Produtos":
+                    TelaProdutos telaProd = new TelaProdutos();
+                    telaProd.setUserInfo(user, nivel);
+                    telaProd.setVisible(true);
+                    this.setVisible(false);
+                    break;
+                case "Financeiro":
+                    TelaFinanceiro telaFin = new TelaFinanceiro();
+                    telaFin.setUserInfo(user, nivel);
+                    telaFin.setVisible(true);
+                    break;
+            }
+            return true;
+        } catch (Exception e){
+            return false;
         }
     }
 
@@ -286,6 +310,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
