@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -147,6 +148,11 @@ public class TelaUsuario extends javax.swing.JFrame {
         jTabbedPane1.addTab("Consultar", jPanel1);
 
         jButton5.setText("Adicionar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Usuário:");
 
@@ -385,6 +391,12 @@ public class TelaUsuario extends javax.swing.JFrame {
             Logger.getLogger(TelaEstoque.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object [][] {
+                {"Admin", "Administrador_Sistema"}});
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public void setUserInfo(String user, String nivel){
         lblUser.setText("<html>Usuário conectado: "+user+"<br/> Nível de acesso: "+nivel+"</html>");
